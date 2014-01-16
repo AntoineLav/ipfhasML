@@ -3,7 +3,7 @@ clear ; close all; clc
 
 %% Load Data
 struct_data = load('mos_data.mat');
-data = struct_data.mos5_data;
+data = struct_data.mos1_data;
 
 %% Initialise result array
 result_predict = zeros(size(data,1), size(data,2)-2);
@@ -43,7 +43,7 @@ for i=3:54
   fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 end
 
-result_predict5 = result_predict;
-result_mos5 = result_mos;
-save('These/RegLog/Moyenne/mos5_predict.mat','result_predict5');
-save('These/RegLog/Moyenne/mos5_result.mat','result_mos5');
+result_predict1 = result_predict;
+result_mos1 = result_mos;
+save('These/RegLog/Moyenne/mos1_predict.mat','result_predict1');
+save('These/RegLog/Moyenne/mos1_result.mat','result_mos1');
